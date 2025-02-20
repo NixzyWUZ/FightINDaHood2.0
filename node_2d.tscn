@@ -1,0 +1,156 @@
+[gd_scene load_steps=15 format=4 uid="uid://coravub35h8ol"]
+
+[ext_resource type="Texture2D" uid="uid://cgbexmixva4tf" path="res://TileSet/Main2/New Piskel (1).png" id="1_axe1c"]
+[ext_resource type="PackedScene" uid="uid://cw1cvr5clpnid" path="res://player.tscn" id="2_3rjcc"]
+[ext_resource type="Texture2D" uid="uid://b48mqy270eelr" path="res://TileSet/Main2/Tileset2.png" id="2_csb5e"]
+[ext_resource type="Texture2D" uid="uid://c726wvt2ac30a" path="res://TileSet/BackGrounds/BG_1.png" id="3_ddncb"]
+[ext_resource type="Texture2D" uid="uid://bdvaflwur2h6k" path="res://TileSet/Main2/noid_was_hereHD.png" id="3_w4toc"]
+[ext_resource type="Texture2D" uid="uid://ttjp1s0ssjbu" path="res://TileSet/BackGrounds/BG_2.png" id="4_0uryc"]
+[ext_resource type="Texture2D" uid="uid://dkwxsq08raaxk" path="res://TileSet/Main2/TileSet_BG5.png" id="4_nbvvu"]
+[ext_resource type="Texture2D" uid="uid://di1hde1m8mqeg" path="res://TileSet/BackGrounds/BG_3.png" id="4_x0r4r"]
+[ext_resource type="Texture2D" uid="uid://vnsmm8us3k3d" path="res://TileSet/BackGrounds/BG_4.png" id="5_wl1vv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d1ex"]
+texture = ExtResource("1_axe1c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4iw7u"]
+texture = ExtResource("2_csb5e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0w4qh"]
+texture = ExtResource("3_w4toc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4oiwl"]
+texture = ExtResource("4_nbvvu")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/y_sort_origin = 8
+2:2/0 = 0
+3:2/0 = 0
+3:2/0/y_sort_origin = -3
+4:2/0 = 0
+4:2/0/y_sort_origin = 2
+5:2/0 = 0
+5:2/0/y_sort_origin = 3
+
+[sub_resource type="TileSet" id="TileSet_sx2t2"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_7d1ex")
+sources/1 = SubResource("TileSetAtlasSource_4iw7u")
+sources/2 = SubResource("TileSetAtlasSource_0w4qh")
+sources/3 = SubResource("TileSetAtlasSource_4oiwl")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_3rjcc")]
+position = Vector2(32, 275)
+scale = Vector2(0.4, 0.4)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Player"]
+offset = Vector2(0, -50)
+zoom = Vector2(2.7, 2.7)
+limit_left = 0
+limit_top = 0
+
+[node name="Layer0" type="TileMapLayer" parent="Node2D"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAkAAAADAAAAAAAAAAoAAAADAAEAAAABAAkAAAAEAAAAAAABAAoAAAAEAAEAAAACAAkAAAADAAAAAAACAAoAAAADAAEAAAADAAkAAAADAAAAAAADAAoAAAADAAEAAAAEAAkAAAADAAAAAAAEAAoAAAADAAEAAAAFAAkAAAADAAAAAAAFAAoAAAADAAEAAAAGAAkAAAAEAAAAAAAGAAoAAAAEAAEAAAAHAAkAAAADAAAAAAAHAAoAAAADAAEAAAAIAAkAAAADAAAAAAAIAAoAAAADAAEAAAAJAAkAAAADAAAAAAAJAAoAAAADAAEAAAAKAAkAAAADAAAAAAAKAAoAAAADAAEAAAALAAkAAAAEAAAAAAALAAoAAAAEAAEAAAAMAAkAAAADAAAAAAAMAAoAAAADAAEAAAANAAkAAAADAAAAAAANAAoAAAADAAEAAAAOAAkAAAADAAAAAAAOAAoAAAADAAEAAAAPAAkAAAADAAAAAAAPAAoAAAADAAEAAAAQAAkAAAAEAAAAAAAQAAoAAAAEAAEAAAARAAkAAAADAAAAAAARAAoAAAADAAEAAAASAAkAAAADAAAAAAASAAoAAAADAAEAAAATAAkAAAADAAAAAAATAAoAAAADAAEAAAAUAAkAAAADAAAAAAAUAAoAAAADAAEAAAAVAAkAAAAEAAAAAAAVAAoAAAAEAAEAAAAWAAoAAAADAAEAAAAXAAoAAAADAAEAAAAYAAoAAAADAAEAAAAZAAoAAAADAAEAAAAWAAkAAAADAAAAAAAXAAkAAAADAAAAAAAYAAkAAAADAAAAAAAZAAkAAAADAAAAAAAaAAkAAAAEAAAAAAAaAAoAAAAEAAEAAAAfAAkAAAAEAAAAAAAfAAoAAAAEAAEAAAAkAAkAAAAEAAAAAAAkAAoAAAAEAAEAAAAbAAkAAAADAAAAAAAbAAoAAAADAAEAAAAcAAkAAAADAAAAAAAcAAoAAAADAAEAAAAdAAkAAAADAAAAAAAdAAoAAAADAAEAAAAeAAkAAAADAAAAAAAeAAoAAAADAAEAAAAgAAkAAAADAAAAAAAgAAoAAAADAAEAAAAhAAkAAAADAAAAAAAhAAoAAAADAAEAAAAiAAkAAAADAAAAAAAiAAoAAAADAAEAAAAjAAkAAAADAAAAAAAjAAoAAAADAAEAAAAlAAkAAAADAAAAAAAlAAoAAAADAAEAAAAmAAkAAAADAAAAAAAmAAoAAAADAAEAAAAnAAkAAAADAAAAAAAnAAoAAAADAAEAAAAoAAkAAAADAAAAAAAoAAoAAAADAAEAAAApAAkAAAAEAAAAAAApAAoAAAAEAAEAAAAqAAkAAAADAAAAAAAqAAoAAAADAAEAAAArAAkAAAADAAAAAAArAAoAAAADAAEAAAAsAAkAAAADAAAAAAAsAAoAAAADAAEAAAAtAAkAAAADAAAAAAAtAAoAAAADAAEAAAAuAAkAAAAEAAAAAAAuAAoAAAAEAAEAAAAvAAkAAAADAAAAAAAvAAoAAAADAAEAAAABAAcAAwAAAAAAAAABAAgAAwAAAAEAAAACAAcAAwABAAAAAAACAAgAAwABAAEAAAADAAcAAwACAAAAAAADAAgAAwACAAEAAAAHAAcAAwAAAAAAAAAHAAgAAwAAAAEAAAAIAAcAAwABAAAAAAAIAAgAAwABAAEAAAAJAAcAAwACAAAAAAAJAAgAAwACAAEAAAATAAcAAwAAAAAAAAATAAgAAwAAAAEAAAAUAAcAAwABAAAAAAAUAAgAAwABAAEAAAAVAAcAAwACAAAAAAAVAAgAAwACAAEAAAAhAAcAAwAAAAAAAAAhAAgAAwAAAAEAAAAiAAcAAwABAAAAAAAiAAgAAwABAAEAAAAjAAcAAwACAAAAAAAjAAgAAwACAAEAAAAmAAcAAwAAAAAAAAAmAAgAAwAAAAEAAAAnAAcAAwABAAAAAAAnAAgAAwABAAEAAAAoAAcAAwACAAAAAAAoAAgAAwACAAEAAAApAAcAAwADAAAAAAApAAgAAwADAAEAAAAqAAcAAwAEAAAAAAAqAAgAAwAEAAEAAAArAAcAAwAFAAAAAAArAAgAAwAFAAEAAAAbAAcAAwADAAAAAAAbAAgAAwADAAEAAAAcAAcAAwAEAAAAAAAcAAgAAwAEAAEAAAAdAAcAAwAFAAAAAAAdAAgAAwAFAAEAAAAKAAcAAwADAAAAAAAKAAgAAwADAAEAAAALAAcAAwAEAAAAAAALAAgAAwAEAAEAAAAMAAcAAwAFAAAAAAAMAAgAAwAFAAEAAAA=")
+tile_set = SubResource("TileSet_sx2t2")
+
+[node name="Layer2" type="TileMapLayer" parent="Node2D"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAgAAAAAAAEAAAAEAAcAAAAAAAAAAAAFAAcAAAABAAAAAAAGAAcAAAACAAAAAAAGAAgAAAACAAEAAAAFAAgAAAABAAEAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAEAAAAPAAYAAAABAAAAAAAPAAcAAAABAAEAAAAQAAYAAAABAAAAAAAQAAcAAAABAAEAAAARAAcAAAABAAEAAAARAAYAAAABAAAAAAASAAYAAAACAAAAAAASAAcAAAACAAEAAAASAAgAAAACAAEAAAAPAAgAAAABAAEAAAAQAAgAAAABAAEAAAARAAgAAAABAAEAAAAOAAgAAAAAAAEAAAAXAAYAAAABAAAAAAAXAAcAAAABAAEAAAAXAAgAAAABAAEAAAAYAAgAAAABAAEAAAAZAAgAAAABAAEAAAAZAAcAAAABAAEAAAAZAAYAAAABAAAAAAAYAAYAAAABAAAAAAAYAAcAAAABAAEAAAAWAAgAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAYAAAAAAAAAAAAaAAgAAAACAAEAAAAaAAcAAAACAAEAAAAaAAYAAAACAAAAAAAfAAgAAAABAAEAAAAfAAcAAAABAAEAAAAeAAgAAAAAAAEAAAAeAAcAAAAAAAEAAAAgAAgAAAACAAEAAAAgAAcAAAACAAEAAAAfAAYAAAABAAAAAAAeAAYAAAAAAAAAAAAgAAYAAAACAAAAAAAFAAkAAwADAAIAABA=")
+tile_set = SubResource("TileSet_sx2t2")
+
+[node name="Layer1" type="TileMapLayer" parent="Node2D"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAjAAgAAwAAAAIAABAoAAgAAwAAAAIAABArAAgAAwAAAAIAABApAAgAAwAAAAIAAAAmAAgAAwAAAAIAAAAhAAgAAwAAAAIAAAABAAgAAwAAAAIAAAAHAAgAAwAAAAIAAAAKAAgAAwAAAAIAAAATAAgAAwAAAAIAAAAbAAgAAwAAAAIAAAAdAAgAAwAAAAIAABAVAAgAAwAAAAIAABAMAAgAAwAAAAIAABAJAAgAAwAAAAIAABADAAgAAwAAAAIAABA=")
+tile_set = SubResource("TileSet_sx2t2")
+
+[node name="Layer3" type="TileMapLayer" parent="Node2D"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAoAAwABAAIAAAAPAAcAAQAAAAEAAAAQAAcAAQABAAEAAAARAAcAAQACAAEAAAAFAAcAAQABAAAAAAARAAYAAQABAAAAAAAXAAYAAQABAAAAAAAaAAcAAQABAAAAAAAgAAcAAQABAAAAAAAFAAkAAwACAAIAAAAFAAgAAQACAAAAAAARAAgAAQACAAAAAAAYAAcAAQACAAAAAAAfAAcAAQACAAAAAAAXAAcAAgAAAAAAAAAZAAgAAgABAAAAAAARAAkAAwAFAAIAAAAMAAkAAwAFAAIAABAcAAkAAwAFAAIAABAbAAkAAwAEAAIAAAAkAAkAAwADAAIAAAAHAAoAAwABAAIAAAAOAAoAAwABAAIAAAAYAAoAAwABAAIAAAAjAAoAAwABAAIAAAAqAAoAAwABAAIAAAABAAoAAwAEAAIAAAAIAAkAAwAEAAIAAAAVAAoAAwAEAAIAAAAjAAkAAwAEAAIAAAAsAAoAAwAEAAIAAAA=")
+tile_set = SubResource("TileSet_sx2t2")
+
+[node name="BackGround" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="BackGround"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/Sky"]
+position = Vector2(320, 216.75)
+scale = Vector2(1, 1.20416)
+texture = ExtResource("3_ddncb")
+
+[node name="City" type="ParallaxLayer" parent="BackGround"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/City"]
+position = Vector2(300, 96.5)
+scale = Vector2(0.967742, 1.20833)
+texture = ExtResource("4_x0r4r")
+
+[node name="Cloud2" type="ParallaxLayer" parent="BackGround"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/Cloud2"]
+position = Vector2(392, 133)
+scale = Vector2(0.6, 0.497059)
+texture = ExtResource("5_wl1vv")
+
+[node name="Cloud1" type="ParallaxLayer" parent="BackGround"]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/Cloud1"]
+position = Vector2(184.5, 146)
+scale = Vector2(0.594231, 0.576471)
+texture = ExtResource("4_0uryc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 352.0
+offset_right = 1536.0
+offset_bottom = 456.0
+color = Color(0.396889, 0.396889, 0.396889, 1)
